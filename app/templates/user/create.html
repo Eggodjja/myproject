@@ -1,13 +1,9 @@
 {% extends 'main/base.html' %}
 
-{% block title %}Добавление темы{% endblock %}
+{% block title %}Creating a topic{% endblock %}
 
 {% block content %}
-<<<<<<< HEAD
-<form method="post" class="form-control d-flex flex-column gap-2">
-=======
 <form method="post" class="form-control d-flex flex-column gap-2" onsubmit="return confirmSubmit()">
->>>>>>> 677dfb4 (add everything without E2E tests)
     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
     <input name="first_name" type="text" placeholder="First name" class="form-control">
     <input name="last_name" type="text" placeholder="Last name" class="form-control">
