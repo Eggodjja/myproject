@@ -1,11 +1,21 @@
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class Config(object):
-    USER =  os.environ.get('POSTGRES_USER', 's1319')
-    PASSWORD = os.environ.get('POSTGRES_PASSWORD', '571518')
-    HOST = os.environ.get('POSTGRES_HOST', '127.0.0.1')
-    PORT = os.environ.get('POSTGRES_PORT', 5432)
-    DB = os.environ.get('POSTGRES_DB', 'mydb')
-    SQLALCHEMY_DATABASE_URI = 'postgresql://s1319:571518@localhost:5432/mydb'
-    SECRET_KEY = 'ghfdjksvhgfjdk567ufghcdfj'
+    USER =  os.environ.get('POSTGRES_USER')
+    PASSWORD = os.environ.get('POSTGRES_PASSWORD')
+    HOST = os.environ.get('POSTGRES_HOST')
+    PORT = os.environ.get('POSTGRES_PORT')
+    DB = os.environ.get('POSTGRES_DB')
+<<<<<<< HEAD
+    SQLALCHEMY_DATABASE_URI = f'postgresql://{USER}:{PASSWORD}@{HOST}:{PORT}/{DB}'
+    SECRET_KEY = os.environ.get('SECRET_KEY', 'default-fallback-secret')
     SQLALCHEMY_TRACK_MODIFICATIONS = True
+=======
+    DATABASE_URI = f'postgresql://{USER}:{PASSWORD}@{HOST}:{PORT}/{DB}'
+    SQLALCHEMY_DATABASE_URI = DATABASE_URI
+    SECRET_KEY = os.environ.get('SECRET_KEY', 'default-fallback-secret')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+>>>>>>> 677dfb4 (add everything without E2E tests)
